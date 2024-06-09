@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Add";
+}
+
+@addTagHelper *,Microfost.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,AuthoringTagHelpers
+
+@model PersonDetails
+
+<form method="post" asp-action="Add">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+
+            <label> Person Birth Day</label>
+            <input asp-for="BirthDay" class="form-control" />
+
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label> City</label>
+            <input asp-for="PersonCity" class="form-control" />
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label> PersonId</label>
+            <input asp-for="PersonId" class="form-control" />
+        </div>
+
+    </div>
+    <div class="form-row">
+
+        <div asp-validation-summary="ModelOnly">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

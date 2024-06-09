@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@addTagHelper *,Microfost.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,AuthoringTagHelpers
+@model WebApp.Models.LoginViewModel
+<h2>Login</h2>
+<div>
+<form asp-action="Login" method="post">
+    <div>
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <button type="submit">Login</button>
+</form>
+</div>

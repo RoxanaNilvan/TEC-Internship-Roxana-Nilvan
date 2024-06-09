@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@addTagHelper *,Microfost.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,AuthoringTagHelpers
+@model List<PersonInformation>
+<h1>Person List</h1>
+<div>
+    <a asp-action="Add" class="btn btn-primary">Add</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position Name</th>
+                <th>Department Name</th>
+                <th>Salary</th>
+                
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model)
+           {
+               <tr>
+                   <td>@item.Name</td>
+                   <td>@item.PositionName</td>
+                   <td>@item.DepartmentName</td>
+                   <td>@item.Salary</td>
+                   
+                   <td>
+                       <a style="color:white" class="btn btn-success" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                       <a style="color:white" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                   </td>
+               </tr>
+           }
+        </tbody>
+    </table>
+</div>
+
